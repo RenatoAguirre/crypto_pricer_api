@@ -25,4 +25,13 @@ async function getPrices (currencies) {
   return prices
 }
 
-module.exports.getPrices = getPrices
+const runScraper = function () {
+  const currencies = require('./cryptos.json')
+
+  ;(async (currencies) => {
+    const prices = await getPrices(currencies)
+    console.log(prices)
+  })(currencies)
+}
+
+module.exports.runScraper = runScraper

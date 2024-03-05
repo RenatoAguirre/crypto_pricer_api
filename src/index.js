@@ -1,8 +1,10 @@
-const scraper = require('./scraper/scraper.js')
+const express = require('express')
 
-const currencies = require('./scraper/cryptos.json')
+const app = express()
+const PORT = process.env.PORT || 3000
 
-;(async (currencies) => {
-  const prices = await scraper.getPrices(currencies)
-  console.log(prices)
-})(currencies)
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
+
+app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
