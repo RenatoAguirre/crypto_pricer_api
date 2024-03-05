@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
   "author": "RenatoAguirre",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^3.1.0",
     "playwright": "^1.42.1",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
     "extends": "standard"
+  },
+  "dependencies": {
+    "express": "^4.18.3"
   }
 }
