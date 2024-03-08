@@ -5,11 +5,7 @@ const cryptoRouter = require('./routes/cryptoRoutes.js')
 const app = express()
 const PORT = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
-
 app.use('/scraper', scraperRouter)
-app.use('/crypto', cryptoRouter)
+app.use('/', cryptoRouter)
 
 app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
