@@ -7,5 +7,3 @@ const getAllCryptos = () => {
 module.exports = {
   getAllCryptos
 }
-
-// console.log(getAllCryptos())
