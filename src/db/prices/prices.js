@@ -14,6 +14,11 @@ const getId = (currency) => {
   return lastRegister.id + 1
 }
 
+const getLastPrice = (currency) => {
+  const prices = getAllPrices(currency).prices // not optimal, change it later
+  return prices.at(-1) || { price: 0 } // in case array is empty
+}
+
 const writePrice = (currency, date, price) => {
   const data = getAllPrices(currency)
   data.prices.push(
@@ -30,5 +35,6 @@ const writePrice = (currency, date, price) => {
 module.exports = {
   getAllPrices,
   writePrice,
-  getId
+  getId,
+  getLastPrice
 }
